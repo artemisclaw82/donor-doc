@@ -33,7 +33,7 @@
     stroke: (paint: border, thickness: 0.8pt),
     radius: 14pt,
     inset: 18pt,
-  )[doc]
+  )[#doc]
 ]
 
 #show heading.where(level: 1): it => [
