@@ -1,29 +1,46 @@
-name: Compile Donor PDF
+name: Compile Typst Document
 on: [push]
+
+# This is required to allow the action to push changes back to the repo
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # Fetch all history so git push works correctly
+          fetch-depth: 0
+
       - name: Setup Typst
         uses: typst-community/setup-typst@v4
       
       - name: Verify Font
         run: |
-          # Replace ./fonts with the directory where your .otf/.ttf files are
-          if ! typst fonts --font-path ./tt-hoves-pro/ttf | grep -q "TT Hoves Pro"; then
-            echo "::error::Font 'TT Hoves Pro' not found in path!"
-            rm donor_doc.pdf
+          if ! typst fonts --font-path ./tt-hoves-pro/ttf | grep -qi "TT Hoves Pro"; then
+            echo "::error::Font 'TT Hoves Pro' not found!"
             exit 1
           fi
 
       - name: Compile
         run: typst compile --font-path ./tt-hoves-pro/ttf donor_doc.typ
 
-      - name: Upload PDF
-        uses: actions/upload-artifact@v4
-        with:
-          name: donor_doc
-          path: donor_doc.pdf
+      - name: Commit and Push PDF
+        run: |
+          # Configure git with a dummy user
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Stage the PDF
+          git add donor_doc.pdf
+          
+          # Only commit and push if the PDF actually changed
+          if git diff --staged --quiet; then
+            echo "No changes to the PDF. Skipping push."
+          else
+            git commit -m "chore: update compiled donor_doc.pdf [skip ci]"
+            git push
+          fi
