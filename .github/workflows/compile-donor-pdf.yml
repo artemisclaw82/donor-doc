@@ -15,6 +15,7 @@ jobs:
           # Replace ./fonts with the directory where your .otf/.ttf files are
           if ! typst fonts --font-path ./tt-hoves-pro/ttf | grep -q "TT Hoves Pro"; then
             echo "::error::Font 'TT Hoves Pro' not found in path!"
+            rm donor_doc.pdf
             exit 1
           fi
 
