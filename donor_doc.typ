@@ -8,7 +8,7 @@
   ),
 )
 
-#set text(font: ("TT-hoves-pro", "Roboto"), size: 24pt)
+#set text(font: ("TT hoves pro", "Roboto"), size: 24pt)
 
 #let seal-description = (
   lorem(50)
