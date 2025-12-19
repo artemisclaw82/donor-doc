@@ -1,0 +1,28 @@
+name: Compile Donor PDF
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+      
+      - name: Verify Font
+        run: |
+          # Replace ./fonts with the directory where your .otf/.ttf files are
+          if ! typst fonts --font-path ./tt-hoves-pro/ttf | grep -q "TT Hoves Pro"; then
+            echo "::error::Font 'TT Hoves Pro' not found in path!"
+            exit 1
+          fi
+
+      - name: Compile
+        run: typst compile --font-path ./tt-hoves-pro/ttf donor_doc.typ
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: donor-doc
+          path: donor-doc.pdf
