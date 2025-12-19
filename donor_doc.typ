@@ -8,8 +8,7 @@
   ),
 )
 
-
-#set text(font: "Roboto", size: 24pt)
+#set text(font: ("TT-hoves-pro", "Roboto"), size: 24pt)
 
 #let seal-description = (
   lorem(50)
@@ -19,24 +18,25 @@
   (
     name: "SEAL 911",
     description: lorem(20),
-    image: "intel-tag.png",
+    image: "logos/seal911.svg",
   ),
   (
     name: "Frameworks",
     description: lorem(20),
-    image: "intel-tag.png",
+    image: "logos/framework.svg",
   ),
   (
     name: "SEAL Intel",
     description: lorem(20),
-    image: "intel-tag.png",
+    image: "logos/intel.svg",
   ),
   (
     name: "Certifications",
     description: lorem(20),
-    image: "intel-tag.png",
+    image: "logos/certifications.svg",
   ),
 )
+
 #set align(center + bottom)
 #stack(
   rect(
