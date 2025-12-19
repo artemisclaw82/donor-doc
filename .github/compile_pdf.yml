@@ -9,6 +9,14 @@ jobs:
       
       - name: Setup Typst
         uses: typst-community/setup-typst@v4
+      
+      - name: Verify Font
+        run: |
+          # Replace ./fonts with the directory where your .otf/.ttf files are
+          if ! typst fonts --font-path ./tt-hoves-pro | grep -q "TT Hoves Pro"; then
+            echo "::error::Font 'TT Hoves Pro' not found in path!"
+            exit 1
+          fi
 
       - name: Compile
         run: typst compile donor-doc.typ
