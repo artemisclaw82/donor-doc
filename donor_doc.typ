@@ -1,47 +1,68 @@
+#let mission_heading = "Our primary purpose is to secure the future of crypto"
+#let mission_paragraph = "We work with top security researchers, developers, and founders to build and maintain public goods that benefit everyone. Everyday, we fight for the wellbeing of the ecosystem, not for profit but for the ideals that decentralized technology represents."
 #let initiatives = (
   (
     name: "SEAL 911",
-    description: lorem(20),
+    description: "The leading incident response team for crypto, trusted by victims when everything's on the line.",
     image: "logos/seal911.svg",
   ),
   (
     name: "Frameworks",
-    description: lorem(20),
+    description: "An open-source collection of security best practices, curated to help crypto companies enhance their security posture.",
     image: "logos/framework.svg",
   ),
   (
     name: "SEAL Intel",
-    description: lorem(20),
+    description: "The hub for crypto threat intelligence, responsible for identifying, analyzing, and disseminating information about new threat actors and trends.",
     image: "logos/intel.svg",
   ),
   (
     name: "Certifications",
-    description: lorem(20),
+    description: "A common sense certification program for crypto professionals, designed to provide a clear baseline in crypto security.",
     image: "logos/certifications.svg",
   ),
 )
-
+#let all-tiers-get = (
+  "Cross-promotional opportunities with the leader in crypto security.",
+  "Quarterly roundtables to discuss your organization's security needs.",
+  "Complementary sponsorship placements for darkMode",
+)
 #let tier-data = (
   (
     name: "Paladin",
+    recommendation: "recommended for market leaders and exchanges",
     image: "logos/paladin.png",
-    perks: ("dog", "cat", "mouse"),
+    perks: (
+      "8x Membership to SEAL (Paladin Badge)",
+      "8x SEAL Assembly Invitation",
+      "High Priority Access to SEAL Resources and Support",
+    ),
     cost: "$1,000,000 per year",
   ),
   (
     name: "Vanguard",
+    recommendation: "recommended for large protocols",
     image: "logos/vanguard.png",
-    perks: ("dog", "cat", "mouse"),
+    perks: (
+      "4x Membership to SEAL (Vanguard Badge)",
+      "4x SEAL Assembly Invitation",
+      "Priority Access to SEAL Resources and Support",
+    ),
     cost: "$400,000 per year",
   ),
   (
     name: "Sentinel",
+    recommendation: "recommended for startups and smaller projects",
     image: "logos/sentinel.png",
-    perks: ("dog", "cat", "mouse"),
+    perks: (
+      "1x Membership to SEAL (Sentinel Badge)",
+      "1x SEAL Assembly Invitation",
+      "Access to SEAL Resources and Support",
+    ),
     cost: "$100,000 per year",
   ),
 )
-
+#let nospace = v(0pt, weak: true)
 #let seal-color = rgb("#4339db")
 #let seal-white = rgb("#fefefe")
 #set page(
@@ -54,9 +75,6 @@
 
 #set text(font: ("TT hoves pro", "Roboto"), size: 24pt)
 
-#let seal-description = (
-  lorem(50)
-)
 
 #set align(center + bottom)
 #stack(
@@ -66,12 +84,22 @@
     fill: rgb(seal-color),
     width: 100%,
     height: 25%,
-    align(horizon, text(
-      seal-description,
-      size: 14pt,
-      fill: seal-white,
-      tracking: 0.5pt,
-      weight: "regular",
+    align(horizon, stack(
+      spacing: 20pt,
+      text(
+        mission_heading,
+        size: 18pt,
+        fill: seal-white,
+        tracking: 0.5pt,
+        weight: "medium",
+      ),
+      text(
+        mission_paragraph,
+        size: 14pt,
+        fill: seal-white,
+        tracking: 0.5pt,
+        weight: "regular",
+      ),
     )),
   ),
 
@@ -89,7 +117,6 @@
         width: 100%,
         height: 50%,
         inset: 20pt,
-        radius: 1%,
         stroke: rgb("#4339db"),
         stack(
           spacing: 20pt,
@@ -117,17 +144,39 @@
 
 
 
-#set page(margin: (x: 0.5cm, y: 0.5cm))
+#set page(margin: (x: 0cm, y: 0cm))
 #set align(center + top)
 #rect(
-  image("hero-blue-bg-2.png", fit: "cover", width: 100%, height: 300pt),
+  inset: 0pt,
+  height: 200pt,
+  outset: 0pt,
+  image("hero-blue-bg-2.png", fit: "cover", width: 100%, height: 200pt),
   stroke: gradient.linear(rgb(seal-white), rgb(seal-color)),
+)
+#v(0pt, weak: true)
+#rect(
+  width: 100%,
+  outset: 0pt,
+  inset: 30pt,
+  height: 150pt,
+  fill: rgb(seal-white),
+  stroke: rgb(seal-white),
+  stack(
+    align(left + top, text("ALL TIERS", fill: rgb(seal-color))),
+    v(15pt),
+    align(left + top, stack(spacing: 10pt, ..all-tiers-get.map(perk => text(
+      perk,
+      fill: rgb(seal-color),
+      size: 18pt,
+    )))),
+  ),
 )
 #for tier in tier-data {
   rect(
+    outset: 0pt,
     height: 15%,
-    width: 100%,
-    radius: 100%,
+    width: 90%,
+    radius: 5%,
     inset: 10pt,
     stroke: gradient.linear(rgb(seal-white), rgb(seal-color)),
     fill: rgb(seal-white),
@@ -147,17 +196,30 @@
       stack(
         dir: ttb,
         spacing: 8pt,
-        text(
-          tier.name,
-          tracking: 1pt,
-          weight: "regular",
-          size: 20pt,
-          fill: rgb(seal-color),
+        stack(
+          dir: ltr,
+          spacing: 10pt,
+
+          text(
+            tier.name,
+            tracking: 1pt,
+            weight: "regular",
+            size: 20pt,
+            fill: rgb(seal-color),
+          ),
+          text(
+            tier.recommendation,
+            tracking: 0pt,
+            weight: "regular",
+            size: 12pt,
+            fill: rgb(seal-color),
+          ),
         ),
+
         text(
           tier.cost,
           tracking: 0pt,
-          weight: "thin",
+          weight: "light",
           size: 12pt,
           fill: rgb(seal-color),
         ),
