@@ -1,4 +1,4 @@
-name: Compile Typst Document
+name: New compile
 on: [push]
 
 jobs:
