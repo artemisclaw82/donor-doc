@@ -24,5 +24,5 @@ jobs:
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
-          name: donor-doc
-          path: donor-doc.pdf
+          name: donor_doc
+          path: donor_doc.pdf
