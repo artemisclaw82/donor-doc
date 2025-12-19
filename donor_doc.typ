@@ -4,13 +4,13 @@
 )
 
 #set text(
-  font: "Arial",
+  font: ("TT Hoves Pro"),
   size: 11pt,
 )
 
 // Page 1
 #page(
-  margin: 0pt,
+  margin: 10pt,
 )[
   // Top third with colored background
   #block(
@@ -24,7 +24,7 @@
       Welcome to Our Platform
     ]
   ]
-  
+
   // Bottom 2/3 with 2x2 grid
   #block(
     width: 100%,
@@ -35,7 +35,7 @@
       columns: (1fr, 1fr),
       rows: (1fr, 1fr),
       gutter: 20pt,
-      
+
       // Top-left cell
       block(
         width: 100%,
@@ -52,7 +52,7 @@
           ]
         ]
       ],
-      
+
       // Top-right cell
       block(
         width: 100%,
@@ -69,7 +69,7 @@
           ]
         ]
       ],
-      
+
       // Bottom-left cell
       block(
         width: 100%,
@@ -86,7 +86,7 @@
           ]
         ]
       ],
-      
+
       // Bottom-right cell
       block(
         width: 100%,
@@ -112,7 +112,7 @@
   margin: 0pt,
 )[
   #v(60pt) // Top spacing
-  
+
   #block(
     width: 100%,
     inset: (left: 60pt, right: 60pt),
@@ -121,7 +121,7 @@
       columns: (1fr,),
       rows: (1fr, 1fr, 1fr),
       gutter: 20pt,
-      
+
       // First row
       block(
         width: 100%,
@@ -138,7 +138,7 @@
           ]
         ]
       ],
-      
+
       // Second row
       block(
         width: 100%,
@@ -155,7 +155,7 @@
           ]
         ]
       ],
-      
+
       // Third row
       block(
         width: 100%,
@@ -174,6 +174,6 @@
       ],
     )
   ]
-  
+
   #v(60pt) // Bottom spacing
 ]
