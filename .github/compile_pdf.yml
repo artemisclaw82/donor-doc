@@ -19,7 +19,7 @@ jobs:
           fi
 
       - name: Compile
-        run: typst compile donor-doc.typ
+        run: typst compile donor_doc.typ
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
