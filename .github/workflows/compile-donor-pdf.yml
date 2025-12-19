@@ -41,6 +41,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to the PDF. Skipping push."
           else
-            git commit -m "chore: update compiled donor_doc.pdf [skip ci]"
+            git commit -m "chore 💅: update compiled donor_doc.pdf"
             git push
           fi
