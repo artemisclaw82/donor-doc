@@ -1,20 +1,3 @@
-
-#let seal-color = rgb("#4339db")
-#let seal-white = rgb("#fefefe")
-#set page(
-  fill: seal-color,
-  margin: (
-    y: 0cm,
-    x: 0cm,
-  ),
-)
-
-#set text(font: ("TT hoves pro", "Roboto"), size: 24pt)
-
-#let seal-description = (
-  lorem(50)
-)
-
 #let initiatives = (
   (
     name: "SEAL 911",
@@ -38,56 +21,6 @@
   ),
 )
 
-#set align(center + bottom)
-#stack(
-  image("logos/seal.svg", height: auto),
-  rect(
-    inset: 40pt,
-    fill: rgb(seal-color),
-    width: 100%,
-    height: 20%,
-    align(horizon, text(seal-description, size: 12pt, fill: seal-white)),
-  ),
-
-  align(horizon, rect(
-    height: 66%,
-    width: 100%,
-    inset: 15pt,
-    fill: seal-white,
-    grid(
-      columns: (40%, 40%),
-      column-gutter: 60pt,
-      row-gutter: 38pt,
-      align: center,
-      ..initiatives.map(initiative => rect(
-        width: 110%,
-        height: 42%,
-        inset: 10pt,
-        radius: 1%,
-        stroke: rgb("#4339db"),
-        stack(
-          spacing: 10pt,
-          image(initiative.image, fit: "contain", height: 70pt),
-          text(
-            initiative.name,
-            fill: seal-color,
-            weight: "medium",
-            kerning: true,
-            tracking: 0.5pt,
-          ),
-          text(
-            initiative.description,
-            fill: seal-color,
-            size: 12pt,
-            weight: "light",
-          ),
-        ),
-      ))
-    ),
-  )),
-)
-#pagebreak()
-
 #let tier-data = (
   (
     name: "Paladin",
@@ -108,6 +41,81 @@
     cost: "$100,000 per year",
   ),
 )
+
+#let seal-color = rgb("#4339db")
+#let seal-white = rgb("#fefefe")
+#set page(
+  fill: seal-color,
+  margin: (
+    y: 0cm,
+    x: 0cm,
+  ),
+)
+
+#set text(font: ("TT hoves pro", "Roboto"), size: 24pt)
+
+#let seal-description = (
+  lorem(50)
+)
+
+#set align(center + bottom)
+#stack(
+  image("logos/seal.svg", height: 10%),
+  rect(
+    inset: 40pt,
+    fill: rgb(seal-color),
+    width: 100%,
+    height: 25%,
+    align(horizon, text(
+      seal-description,
+      size: 14pt,
+      fill: seal-white,
+      tracking: 0.5pt,
+      weight: "regular",
+    )),
+  ),
+
+  align(horizon, rect(
+    height: 60%,
+    width: 125%,
+    inset: 0pt,
+    fill: rgb(seal-white),
+    grid(
+      columns: (40%, 40%),
+      column-gutter: 0pt,
+      row-gutter: 0pt,
+      align: center,
+      ..initiatives.map(initiative => rect(
+        width: 100%,
+        height: 50%,
+        inset: 20pt,
+        radius: 1%,
+        stroke: rgb("#4339db"),
+        stack(
+          spacing: 20pt,
+          image(initiative.image, fit: "contain", height: 70pt),
+          text(
+            initiative.name,
+            fill: seal-color,
+            weight: "medium",
+            kerning: true,
+            tracking: 0.5pt,
+          ),
+          text(
+            initiative.description,
+            fill: seal-color,
+            size: 12pt,
+            weight: "light",
+          ),
+        ),
+      ))
+    ),
+  )),
+)
+
+#pagebreak()
+
+
 
 #set page(margin: (x: 0.5cm, y: 0.5cm))
 #set align(center + top)
