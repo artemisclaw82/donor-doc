@@ -1,4 +1,4 @@
-name: Compile Typst Document
+name: Compile Donor PDF
 on: [push]
 
 # This is required to allow the action to push changes back to the repo
@@ -15,32 +15,31 @@ jobs:
           # Fetch all history so git push works correctly
           fetch-depth: 0
 
-      - name: Setup Typst
-        uses: typst-community/setup-typst@v4
-      
-      - name: Verify Font
-        run: |
-          if ! typst fonts --font-path ./tt-hoves-pro/ttf | grep -qi "TT Hoves Pro"; then
-            echo "::error::Font 'TT Hoves Pro' not found!"
-            exit 1
-          fi
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-      - name: Compile
-        run: typst compile --font-path ./tt-hoves-pro/ttf donor_doc.typ
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate PDF
+        run: node generate-pdf.js
 
       - name: Commit and Push PDF
         run: |
           # Configure git with a dummy user
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
+
           # Stage the PDF
           git add -f donor_doc.pdf
-          
+
           # Only commit and push if the PDF actually changed
           if git diff --staged --quiet; then
             echo "No changes to the PDF. Skipping push."
           else
-            git commit -m "chore 💅: update compiled donor_doc.pdf"
+            git commit -m "chore: update compiled donor_doc.pdf"
             git push
           fi

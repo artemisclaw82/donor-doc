@@ -1,0 +1,13 @@
+{
+  "name": "donor-doc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Security Alliance donor document — HTML to PDF",
+  "scripts": {
+    "build": "node generate-pdf.js",
+    "preview": "npx serve -l 3000"
+  },
+  "dependencies": {
+    "puppeteer": "^24.0.0"
+  }
+}
