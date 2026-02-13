@@ -174,12 +174,16 @@
     /* ══════════════════════════════════════
        PAGE 2 — Why SEAL
        ══════════════════════════════════════ */
+    .page-2 {
+      display: flex;
+      flex-direction: column;
+    }
+
     .p2-hero {
       width: 100%;
-      height: 140pt;
+      height: 130pt;
       overflow: hidden;
       flex-shrink: 0;
-      position: relative;
     }
 
     .p2-hero img {
@@ -190,7 +194,7 @@
     }
 
     .p2-intro {
-      padding: 28pt 36pt 20pt;
+      padding: 28pt 40pt 22pt;
       background: var(--seal);
       color: var(--white);
       flex-shrink: 0;
@@ -207,7 +211,7 @@
       font-size: 11pt;
       font-weight: 400;
       line-height: 1.55;
-      margin-bottom: 10pt;
+      margin-bottom: 8pt;
     }
 
     .p2-intro-note {
@@ -220,7 +224,7 @@
     .p2-body {
       flex: 1;
       background: var(--white);
-      padding: 24pt 36pt 20pt;
+      padding: 28pt 40pt 24pt;
       display: flex;
       flex-direction: column;
     }
@@ -233,11 +237,11 @@
     }
 
     .p2-text {
-      font-size: 10pt;
+      font-size: 10.5pt;
       font-weight: 400;
       color: #222;
       line-height: 1.6;
-      margin-bottom: 10pt;
+      margin-bottom: 12pt;
     }
 
     .p2-text strong {
@@ -245,18 +249,17 @@
       color: var(--seal);
     }
 
-    /* Stat grid */
     .stat-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 10pt;
-      margin: 12pt 0 16pt;
+      margin: 14pt 0 18pt;
     }
 
     .stat-box {
       background: var(--seal);
       border-radius: 8pt;
-      padding: 14pt 10pt;
+      padding: 16pt 10pt;
       text-align: center;
     }
 
@@ -276,15 +279,15 @@
     }
 
     .p2-callout {
-      font-size: 10pt;
+      font-size: 10.5pt;
       font-weight: 400;
       color: #222;
       line-height: 1.6;
-      padding: 10pt 14pt;
+      padding: 12pt 16pt;
       border-left: 3pt solid var(--seal);
       background: rgba(67, 57, 219, 0.04);
       border-radius: 0 6pt 6pt 0;
-      margin-bottom: 10pt;
+      margin-bottom: 12pt;
     }
 
     .p2-callout strong {
@@ -295,268 +298,128 @@
     /* ══════════════════════════════════════
        PAGE 3 — Sponsorship Tiers
        ══════════════════════════════════════ */
-    .p3-heading {
-      color: var(--white);
-      font-size: 20pt;
-      font-weight: 500;
-      letter-spacing: 0.5pt;
-      padding: 18pt 24pt 10pt;
-      flex-shrink: 0;
-    }
-
-    .tiers-stack {
-      flex: 1;
+    .page-3 {
       display: flex;
       flex-direction: column;
-      gap: 8pt;
-      padding: 0 18pt 18pt;
+      align-items: center;
+      justify-content: flex-end;
     }
 
-    .tier-row {
-      flex: 1;
-      background: var(--white);
-      border-radius: 10pt;
-      overflow: hidden;
+    .p3-header {
+      height: 15%;
+      width: 100%;
       display: flex;
       flex-direction: column;
-    }
-
-    .tier-row-header {
-      padding: 10pt 18pt 8pt;
-      display: flex;
-      align-items: baseline;
-      gap: 10pt;
-      flex-shrink: 0;
-    }
-
-    .tier-row-name {
-      font-size: 14pt;
-      font-weight: 500;
-      color: var(--white);
-      letter-spacing: 0.4pt;
-    }
-
-    .tier-row-price {
-      font-size: 10pt;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .tier-row-body {
-      flex: 1;
-      padding: 6pt 18pt 10pt;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3pt 18pt;
-      align-content: start;
-    }
-
-    .tier-row-inherits {
-      grid-column: 1 / -1;
-      font-size: 8pt;
-      font-weight: 400;
-      font-style: italic;
-      color: #888;
-      margin-bottom: 2pt;
-    }
-
-    .tier-highlight {
-      display: flex;
-      align-items: flex-start;
-      gap: 5pt;
-      font-size: 8.5pt;
-      font-weight: 400;
-      color: #333;
-      line-height: 1.4;
-    }
-
-    .tier-highlight svg {
-      flex-shrink: 0;
-      margin-top: 1pt;
-    }
-
-    /* Tier color bands */
-    .tier-c1 .tier-row-header {
-      background: linear-gradient(135deg, #7c7ae8, #6360e4);
-    }
-
-    .tier-c2 .tier-row-header {
-      background: linear-gradient(135deg, #6360e4, #4f4cdd);
-    }
-
-    .tier-c3 .tier-row-header {
-      background: linear-gradient(135deg, #4f4cdd, #3d3ad4);
-    }
-
-    .tier-c4 .tier-row-header {
-      background: linear-gradient(135deg, #3d3ad4, #2e2bc0);
-    }
-
-    /* ══════════════════════════════════════
-       PAGE 4 — Strategic Initiative + Every Sponsor Gets
-       ══════════════════════════════════════ */
-    .p4-layout {
-      display: flex;
-      flex-direction: column;
-      padding: 18pt;
-      gap: 12pt;
-    }
-
-    /* Strategic Initiative card (reversed) */
-    .si-card {
-      background: linear-gradient(135deg, #322fb8, #4339db);
-      border-radius: 10pt;
-      padding: 20pt 24pt;
-      flex-shrink: 0;
-    }
-
-    .si-card .si-header {
-      display: flex;
-      align-items: baseline;
-      gap: 10pt;
-      margin-bottom: 10pt;
-      flex-wrap: wrap;
-    }
-
-    .si-card .si-name {
-      font-size: 16pt;
-      font-weight: 500;
-      color: var(--white);
-      letter-spacing: 0.4pt;
-    }
-
-    .si-card .si-price {
-      font-size: 11pt;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .si-card .si-desc {
-      font-size: 9.5pt;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.5;
-      margin-bottom: 10pt;
-    }
-
-    .si-card .si-examples {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4pt 14pt;
-    }
-
-    .si-card .si-examples li {
-      font-size: 8.5pt;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.4;
-      padding-left: 10pt;
-      position: relative;
-    }
-
-    .si-card .si-examples li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 4.5pt;
-      width: 4pt;
-      height: 4pt;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
-    }
-
-    .si-card .si-cta {
-      font-size: 9pt;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.65);
-      font-style: italic;
-      margin-top: 10pt;
-    }
-
-    /* What Every Sponsor Gets */
-    .esg-card {
-      background: var(--white);
-      border-radius: 10pt;
-      padding: 20pt 24pt;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .esg-heading {
-      font-size: 16pt;
-      font-weight: 500;
-      color: var(--seal);
-      margin-bottom: 6pt;
-    }
-
-    .esg-intro {
-      font-size: 9pt;
-      font-weight: 400;
-      color: #666;
-      margin-bottom: 14pt;
-    }
-
-    .esg-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14pt 20pt;
-      align-content: start;
-    }
-
-    .esg-item {
-      display: flex;
-      gap: 8pt;
-      align-items: flex-start;
-    }
-
-    .esg-item.full-width {
-      grid-column: 1 / -1;
-    }
-
-    .esg-icon {
-      width: 28pt;
-      height: 28pt;
-      flex-shrink: 0;
-      background: rgba(67, 57, 219, 0.08);
-      border-radius: 6pt;
-      display: flex;
       align-items: center;
       justify-content: center;
+      gap: 10pt;
+      flex-shrink: 0;
     }
 
-    .esg-icon svg {
-      width: 14pt;
-      height: 14pt;
-    }
-
-    .esg-item-title {
-      font-size: 9.5pt;
-      font-weight: 600;
-      color: var(--seal);
-      margin-bottom: 2pt;
-    }
-
-    .esg-item-text {
-      font-size: 8.5pt;
-      font-weight: 400;
-      color: #555;
-      line-height: 1.45;
-    }
-
-    .contact-bar {
-      margin-top: auto;
-      padding-top: 14pt;
-      border-top: 1px solid rgba(67, 57, 219, 0.12);
+    .p3-title {
+      font-size: 22pt;
+      font-weight: 500;
+      letter-spacing: 0.5pt;
+      color: var(--white);
       text-align: center;
     }
 
-    .contact-bar p {
-      font-size: 10pt;
+    .p3-subtitle {
+      font-size: 11pt;
+      font-weight: 400;
+      color: var(--white);
+      opacity: 0.8;
+      text-align: center;
+    }
+
+    .tiers-grid {
+      height: 72%;
+      width: 100%;
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      flex-shrink: 0;
+    }
+
+    .tier-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16pt 18pt;
+      border: 1px solid var(--seal);
+      text-align: center;
+      gap: 8pt;
+    }
+
+    .tier-badge {
+      height: 55pt;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .tier-name {
+      font-size: 18pt;
+      font-weight: 500;
+      color: var(--seal);
+      letter-spacing: 0.5pt;
+    }
+
+    .tier-price {
+      font-size: 11pt;
+      font-weight: 400;
+      color: var(--seal-light);
+      margin-top: -4pt;
+    }
+
+    .tier-includes {
+      font-size: 8pt;
+      font-weight: 300;
+      font-style: italic;
+      color: #999;
+      margin-top: -2pt;
+    }
+
+    .tier-highlights {
+      list-style: none;
+      text-align: center;
+    }
+
+    .tier-highlights li {
+      font-size: 9pt;
       font-weight: 400;
       color: var(--seal);
-      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .p3-footer {
+      height: 13%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8pt;
+      flex-shrink: 0;
+      padding: 0 40pt;
+    }
+
+    .p3-footer-text {
+      font-size: 10pt;
+      font-weight: 400;
+      color: var(--white);
+      text-align: center;
+      line-height: 1.5;
+      opacity: 0.85;
+    }
+
+    .p3-footer-contact {
+      font-size: 11pt;
+      font-weight: 500;
+      color: var(--white);
+      text-align: center;
+      letter-spacing: 0.3pt;
     }
   </style>
 </head>
@@ -668,7 +531,7 @@
   </div>
 
   <!-- ═══════ PAGE 2 — Why SEAL ═══════ -->
-  <div class="page" style="display:flex;flex-direction:column;">
+  <div class="page page-2">
 
     <div class="p2-hero">
       <img src="hero-blue-bg-2.png" alt="" />
@@ -676,10 +539,8 @@
 
     <div class="p2-intro">
       <div class="p2-title">SEAL Sponsorship Program</div>
-      <p class="p2-intro-text">Security Alliance (SEAL) is a nonprofit dedicated to protecting the crypto ecosystem
-        through incident response, threat intelligence, security frameworks, and certification standards. Your
-        sponsorship directly funds the people and infrastructure that make this work possible &mdash; while giving your
-        team meaningful access to SEAL's intelligence, community, and expertise.</p>
+      <p class="p2-intro-text">Your sponsorship directly funds the people and infrastructure that protect the crypto
+        ecosystem &mdash; while giving your team meaningful access to SEAL's intelligence, community, and expertise.</p>
       <p class="p2-intro-note">All of SEAL's core work remains free and open. Sponsorship adds private value on top of
         public goods.</p>
     </div>
@@ -689,7 +550,7 @@
 
       <p class="p2-text">In 2025, SEAL handled over 1,800 incident tickets and coordinated 125+ war rooms in response
         to active exploits. Drainer-related losses fell to $84 million &mdash; an all-time low &mdash; down from nearly
-        $1 billion cumulative over prior years. SEAL's total annual operating cost: $2M.</p>
+        $1 billion cumulative over prior years. SEAL's total annual operating cost: <strong>$2M</strong>.</p>
 
       <div class="stat-grid">
         <div class="stat-box">
@@ -710,261 +571,87 @@
         </div>
       </div>
 
-      <p class="p2-text">That works out to roughly $1,100 per incident handled. A single smart contract audit costs
-        $50&ndash;200k. The Bybit exploit alone was $1.4 billion &mdash; more than 700x SEAL's entire annual budget.</p>
-
-      <p class="p2-text">SEAL operates with ~5 full-time staff. The rest &mdash; 28 SEAL 911 responders, framework
-        stewards, Intel contributors &mdash; are volunteers who donate thousands of hours of senior security expertise
-        because they believe in the mission. Initiative leads are compensated at well below market rate. Your
-        sponsorship
-        funds the coordination layer that makes this volunteer network effective.</p>
+      <p class="p2-text">That works out to roughly <strong>$1,100 per incident</strong>. A single smart contract audit
+        costs $50&ndash;200k. The Bybit exploit alone was $1.4 billion &mdash; more than 700x SEAL's entire annual
+        budget.</p>
 
       <div class="p2-callout">
         <strong>Where your money goes:</strong> The majority of sponsorship revenue goes directly to people &mdash; the
         analysts, engineers, and coordinators who respond to incidents, produce threat intelligence, and develop
         security
-        standards.
+        standards. SEAL operates with ~5 full-time staff; the rest are volunteers who donate thousands of hours of
+        senior
+        security expertise because they believe in the mission.
       </div>
 
       <div class="p2-callout">
-        <strong>Current runway:</strong> SEAL publishes full financial transparency reports. We operate lean by design
-        &mdash; every dollar goes to work immediately, which also means we rely on sustained sponsorship to continue
-        operating. We'll share our current financial position openly with any prospective sponsor.
+        <strong>Financial transparency:</strong> SEAL publishes full financial transparency reports. We operate lean by
+        design &mdash; every dollar goes to work immediately. We'll share our current financial position openly with any
+        prospective sponsor.
       </div>
     </div>
 
   </div>
 
   <!-- ═══════ PAGE 3 — Sponsorship Tiers ═══════ -->
-  <div class="page" style="display:flex;flex-direction:column;">
-    <div class="p3-heading">Sponsorship Tiers</div>
-    <div class="tiers-stack">
+  <div class="page page-3">
 
-      <div class="tier-row tier-c1">
-        <div class="tier-row-header">
-          <span class="tier-row-name">Supporter</span>
-          <span class="tier-row-price">$50,000 / year</span>
-        </div>
-        <div class="tier-row-body">
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
-            </svg><span>Quarterly threat landscape report (5&ndash;8 pages) with emerging TTPs and watchlist</span>
-          </div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M2 3h12v10H2z M5 1v4 M11 1v4 M2 7h12" />
-            </svg><span>Biannual framework roadmap briefings and vendor guidance</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <circle cx="6" cy="5" r="3" />
-              <path d="M1 15c0-3 2.2-5.5 5-5.5s5 2.5 5 5.5" />
-              <circle cx="11.5" cy="6" r="2" />
-              <path d="M15 15c0-2-1.5-4-3.5-4" />
-            </svg><span>2 seats in SEAL's private community channels</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" />
-            </svg><span>Logo on SEAL website, named in annual report</span></div>
-        </div>
-      </div>
-
-      <div class="tier-row tier-c2">
-        <div class="tier-row-header">
-          <span class="tier-row-name">Partner</span>
-          <span class="tier-row-price">$100,000 / year</span>
-        </div>
-        <div class="tier-row-body">
-          <div class="tier-row-inherits">Everything in Supporter, plus:</div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
-            </svg><span>Monthly threat briefing with ecosystem-specific appendix</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
-            </svg><span>ISAC platform (OpenCTI) read access with curated feeds</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M13.5 2H10L8 5 6 2H2.5L6.5 8l-4 6h3.5L8 11l2 3h3.5L9.5 8z" />
-            </svg><span>Dedicated SEAL 911 hotline for your security team</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <circle cx="6" cy="5" r="3" />
-              <path d="M1 15c0-3 2.2-5.5 5-5.5s5 2.5 5 5.5" />
-              <circle cx="11.5" cy="6" r="2" />
-              <path d="M15 15c0-2-1.5-4-3.5-4" />
-            </svg><span>4 community seats + sponsor roundtable</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M2 3h12v10H2z M5 1v4 M11 1v4 M2 7h12" />
-            </svg><span>Direct input on framework priorities &amp; accreditation</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" />
-            </svg><span>Upgraded logo placement + inclusion in publications</span></div>
-        </div>
-      </div>
-
-      <div class="tier-row tier-c3">
-        <div class="tier-row-header">
-          <span class="tier-row-name">Strategic Partner</span>
-          <span class="tier-row-price">$250,000 / year</span>
-        </div>
-        <div class="tier-row-body">
-          <div class="tier-row-inherits">Everything in Partner, plus:</div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
-            </svg><span>~4 hrs/week dedicated analyst monitoring your ecosystem</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
-            </svg><span>Monthly tailored reports + quarterly analyst calls</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M2 3h12v10H2z M5 1v4 M11 1v4 M2 7h12" />
-            </svg><span>Input on new frameworks + early access to cert standards</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <circle cx="6" cy="5" r="3" />
-              <path d="M1 15c0-3 2.2-5.5 5-5.5s5 2.5 5 5.5" />
-              <circle cx="11.5" cy="6" r="2" />
-              <path d="M15 15c0-2-1.5-4-3.5-4" />
-            </svg><span>6 community seats</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" />
-            </svg><span>Co-branded content, speaking opps, featured case study</span></div>
-        </div>
-      </div>
-
-      <div class="tier-row tier-c4">
-        <div class="tier-row-header">
-          <span class="tier-row-name">Principal Partner</span>
-          <span class="tier-row-price">$500,000 / year</span>
-        </div>
-        <div class="tier-row-body">
-          <div class="tier-row-inherits">Everything in Strategic Partner, plus:</div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
-            </svg><span>~8&ndash;10 hrs/week dedicated analyst time</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
-            </svg><span>Early threat warnings + post-incident analysis</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M2 3h12v10H2z M5 1v4 M11 1v4 M2 7h12" />
-            </svg><span>Strategic framework input + deep development integration</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <circle cx="6" cy="5" r="3" />
-              <path d="M1 15c0-3 2.2-5.5 5-5.5s5 2.5 5 5.5" />
-              <circle cx="11.5" cy="6" r="2" />
-              <path d="M15 15c0-2-1.5-4-3.5-4" />
-            </svg><span>10 community seats + direct SEAL leadership access</span></div>
-          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
-              stroke-width="1.6">
-              <path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" />
-            </svg><span>&ldquo;Presented by&rdquo; branding on major SEAL initiatives</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ═══════ PAGE 4 — Strategic Initiative + What Every Sponsor Gets ═══════ -->
-  <div class="page p4-layout">
-
-    <div class="si-card">
-      <div class="si-header">
-        <span class="si-name">Strategic Initiative Sponsor</span>
-        <span class="si-price">by arrangement</span>
-      </div>
-      <p class="si-desc">For foundations and organizations that want to fund a specific capability within SEAL. Every
-        engagement is bespoke and scoped collaboratively.</p>
-      <ul class="si-examples">
-        <li>Dedicated security engineer for a specific chain's threat landscape</li>
-        <li>Expansion of SEAL Intel infrastructure and tooling</li>
-        <li>Research initiative on an emerging threat category</li>
-        <li>Development of new detection and monitoring systems</li>
-      </ul>
-      <p class="si-cta">Deliverables and milestones defined per engagement. Reach out to discuss.</p>
+    <div class="p3-header">
+      <div class="p3-title">Sponsorship Tiers</div>
+      <div class="p3-subtitle">Each tier includes everything from the tier below it</div>
     </div>
 
-    <div class="esg-card">
-      <div class="esg-heading">What Every Sponsor Gets</div>
-      <p class="esg-intro">Regardless of tier, every SEAL sponsor benefits from:</p>
-      <div class="esg-grid">
-        <div class="esg-item">
-          <div class="esg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4339db" stroke-width="1.8"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z" />
-              <path d="M9 12l2 2 4-4" />
-            </svg></div>
-          <div>
-            <div class="esg-item-title">SEAL's public goods</div>
-            <div class="esg-item-text">SEAL 911 emergency response, published frameworks, open-source tooling, and
-              public threat research protect the entire ecosystem, including yours.</div>
-          </div>
-        </div>
-        <div class="esg-item">
-          <div class="esg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4339db" stroke-width="1.8"
-              stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="16" rx="2" />
-              <path d="M3 10h18" />
-              <path d="M10 4v16" />
-            </svg></div>
-          <div>
-            <div class="esg-item-title">Financial transparency</div>
-            <div class="esg-item-text">Annual transparency reports and quarterly financial updates so you can see
-              exactly how sponsorship is put to work.</div>
-          </div>
-        </div>
-        <div class="esg-item">
-          <div class="esg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4339db" stroke-width="1.8"
-              stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <path d="M3 9h18" />
-              <path d="M9 3v6" />
-            </svg></div>
-          <div>
-            <div class="esg-item-title">Quarterly organizational update</div>
-            <div class="esg-item-text">Newsletter covering incidents handled, framework adoption, team news, and how
-              sponsorship revenue was allocated.</div>
-          </div>
-        </div>
-        <div class="esg-item">
-          <div class="esg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4339db" stroke-width="1.8"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 00-3-3.87" />
-              <path d="M16 3.13a4 4 0 010 7.75" />
-            </svg></div>
-          <div>
-            <div class="esg-item-title">Structured onboarding</div>
-            <div class="esg-item-text">Within the first two weeks, we walk through deliverables, understand your threat
-              profile, and set expectations.</div>
-          </div>
-        </div>
-        <div class="esg-item full-width">
-          <div class="esg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4339db" stroke-width="1.8"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
-            </svg></div>
-          <div>
-            <div class="esg-item-title">Quarterly check-ins (Partner tier and above)</div>
-            <div class="esg-item-text">A brief conversation to make sure deliverables are working for your team and to
-              adjust as needed.</div>
-          </div>
-        </div>
+    <div class="tiers-grid">
+      <div class="tier-cell">
+        <img class="tier-badge" src="logos/sentinel.png" alt="Supporter badge" />
+        <div class="tier-name">Supporter</div>
+        <div class="tier-price">$50,000 / year</div>
+        <ul class="tier-highlights">
+          <li>Quarterly threat landscape report</li>
+          <li>Framework roadmap briefings</li>
+          <li>2 community seats</li>
+          <li>Logo on SEAL website</li>
+        </ul>
       </div>
-      <div class="contact-bar">
-        <p>For questions or to discuss sponsorship, contact [TBD].</p>
+      <div class="tier-cell">
+        <img class="tier-badge" src="logos/sentinel.png" alt="Partner badge" />
+        <div class="tier-name">Partner</div>
+        <div class="tier-price">$100,000 / year</div>
+        <ul class="tier-highlights">
+          <li>Monthly threat briefings + ISAC access</li>
+          <li>Dedicated SEAL 911 hotline</li>
+          <li>4 community seats + roundtable</li>
+          <li>Framework input + accreditation</li>
+        </ul>
       </div>
+      <div class="tier-cell">
+        <img class="tier-badge" src="logos/vanguard.png" alt="Strategic Partner badge" />
+        <div class="tier-name">Strategic Partner</div>
+        <div class="tier-price">$250,000 / year</div>
+        <ul class="tier-highlights">
+          <li>~4 hrs/week dedicated analyst</li>
+          <li>Tailored monthly reports</li>
+          <li>6 community seats</li>
+          <li>Co-branded content + events</li>
+        </ul>
+      </div>
+      <div class="tier-cell">
+        <img class="tier-badge" src="logos/paladin.png" alt="Principal Partner badge" />
+        <div class="tier-name">Principal Partner</div>
+        <div class="tier-price">$500,000 / year</div>
+        <ul class="tier-highlights">
+          <li>~8&ndash;10 hrs/week dedicated analyst</li>
+          <li>Early threat warnings</li>
+          <li>10 seats + leadership access</li>
+          <li>&ldquo;Presented by&rdquo; branding</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="p3-footer">
+      <div class="p3-footer-text">Custom strategic initiative sponsorships are also available by arrangement.<br />
+        Every sponsor receives structured onboarding, quarterly check-ins, and full financial transparency.</div>
+      <div class="p3-footer-contact">For questions or to discuss sponsorship, contact [TBD].</div>
     </div>
 
   </div>
