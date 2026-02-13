@@ -293,117 +293,188 @@
     }
 
     /* ══════════════════════════════════════
-       PAGES 3-5 — Tier detail pages
+       PAGE 3 — Sponsorship Tiers
        ══════════════════════════════════════ */
-    .tier-page {
-      display: flex;
-      flex-direction: column;
-      padding: 18pt 22pt;
-      gap: 12pt;
+    .p3-heading {
+      color: var(--white);
+      font-size: 20pt;
+      font-weight: 500;
+      letter-spacing: 0.5pt;
+      padding: 18pt 24pt 10pt;
+      flex-shrink: 0;
     }
 
-    .td-card {
-      background: var(--white);
-      border-radius: 10pt;
-      padding: 18pt 22pt 14pt;
+    .tiers-stack {
       flex: 1;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
+      gap: 8pt;
+      padding: 0 18pt 18pt;
     }
 
-    .td-card-header {
+    .tier-row {
+      flex: 1;
+      background: var(--white);
+      border-radius: 10pt;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tier-row-header {
+      padding: 10pt 18pt 8pt;
       display: flex;
       align-items: baseline;
-      gap: 12pt;
-      margin-bottom: 4pt;
-      flex-wrap: wrap;
+      gap: 10pt;
+      flex-shrink: 0;
     }
 
-    .td-card-name {
-      font-size: 18pt;
+    .tier-row-name {
+      font-size: 14pt;
       font-weight: 500;
-      color: var(--seal);
-      letter-spacing: 0.5pt;
+      color: var(--white);
+      letter-spacing: 0.4pt;
     }
 
-    .td-card-price {
-      font-size: 12pt;
+    .tier-row-price {
+      font-size: 10pt;
       font-weight: 400;
-      color: var(--seal-light);
+      color: rgba(255, 255, 255, 0.8);
     }
 
-    .td-inherits {
-      font-size: 9pt;
+    .tier-row-body {
+      flex: 1;
+      padding: 6pt 18pt 10pt;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3pt 18pt;
+      align-content: start;
+    }
+
+    .tier-row-inherits {
+      grid-column: 1 / -1;
+      font-size: 8pt;
       font-weight: 400;
       font-style: italic;
-      color: #666;
-      margin-bottom: 8pt;
+      color: #888;
+      margin-bottom: 2pt;
     }
 
-    .td-divider {
-      width: 50%;
-      height: 1px;
-      background: linear-gradient(to right, var(--seal), transparent);
-      margin-bottom: 10pt;
-    }
-
-    .td-category {
-      margin-bottom: 8pt;
-    }
-
-    .td-cat-title {
-      font-size: 9.5pt;
-      font-weight: 600;
-      color: var(--seal);
-      margin-bottom: 4pt;
-      letter-spacing: 0.3pt;
-    }
-
-    .td-bullets {
-      list-style: none;
-      padding-left: 10pt;
-    }
-
-    .td-bullets li {
-      font-size: 9pt;
+    .tier-highlight {
+      display: flex;
+      align-items: flex-start;
+      gap: 5pt;
+      font-size: 8.5pt;
       font-weight: 400;
       color: #333;
-      line-height: 1.45;
-      padding-left: 8pt;
-      position: relative;
-      margin-bottom: 3pt;
+      line-height: 1.4;
     }
 
-    .td-bullets li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 5.5pt;
-      width: 3pt;
-      height: 3pt;
-      border-radius: 50%;
-      background: var(--seal);
+    .tier-highlight svg {
+      flex-shrink: 0;
+      margin-top: 1pt;
+    }
+
+    /* Tier color bands */
+    .tier-c1 .tier-row-header {
+      background: linear-gradient(135deg, #7c7ae8, #6360e4);
+    }
+
+    .tier-c2 .tier-row-header {
+      background: linear-gradient(135deg, #6360e4, #4f4cdd);
+    }
+
+    .tier-c3 .tier-row-header {
+      background: linear-gradient(135deg, #4f4cdd, #3d3ad4);
+    }
+
+    .tier-c4 .tier-row-header {
+      background: linear-gradient(135deg, #3d3ad4, #2e2bc0);
     }
 
     /* ══════════════════════════════════════
-       PAGE 5 — Initiative Sponsor + Every Sponsor Gets
+       PAGE 4 — Strategic Initiative + Every Sponsor Gets
        ══════════════════════════════════════ */
-    .td-card-description {
+    .p4-layout {
+      display: flex;
+      flex-direction: column;
+      padding: 18pt;
+      gap: 12pt;
+    }
+
+    /* Strategic Initiative card (reversed) */
+    .si-card {
+      background: linear-gradient(135deg, #322fb8, #4339db);
+      border-radius: 10pt;
+      padding: 20pt 24pt;
+      flex-shrink: 0;
+    }
+
+    .si-card .si-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10pt;
+      margin-bottom: 10pt;
+      flex-wrap: wrap;
+    }
+
+    .si-card .si-name {
+      font-size: 16pt;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.4pt;
+    }
+
+    .si-card .si-price {
+      font-size: 11pt;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .si-card .si-desc {
       font-size: 9.5pt;
       font-weight: 400;
-      color: #333;
-      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
       margin-bottom: 10pt;
     }
 
-    .td-examples-label {
-      font-size: 9pt;
-      font-weight: 500;
-      color: #555;
-      margin-bottom: 4pt;
+    .si-card .si-examples {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4pt 14pt;
     }
 
+    .si-card .si-examples li {
+      font-size: 8.5pt;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.4;
+      padding-left: 10pt;
+      position: relative;
+    }
+
+    .si-card .si-examples li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4.5pt;
+      width: 4pt;
+      height: 4pt;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .si-card .si-cta {
+      font-size: 9pt;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.65);
+      font-style: italic;
+      margin-top: 10pt;
+    }
+
+    /* What Every Sponsor Gets */
     .esg-card {
       background: var(--white);
       border-radius: 10pt;
@@ -417,19 +488,47 @@
       font-size: 16pt;
       font-weight: 500;
       color: var(--seal);
-      margin-bottom: 14pt;
+      margin-bottom: 6pt;
     }
 
     .esg-intro {
-      font-size: 9.5pt;
+      font-size: 9pt;
       font-weight: 400;
-      color: #444;
-      line-height: 1.5;
+      color: #666;
       margin-bottom: 14pt;
     }
 
+    .esg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14pt 20pt;
+      align-content: start;
+    }
+
     .esg-item {
-      margin-bottom: 10pt;
+      display: flex;
+      gap: 8pt;
+      align-items: flex-start;
+    }
+
+    .esg-item.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .esg-icon {
+      width: 28pt;
+      height: 28pt;
+      flex-shrink: 0;
+      background: rgba(67, 57, 219, 0.08);
+      border-radius: 6pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .esg-icon svg {
+      width: 14pt;
+      height: 14pt;
     }
 
     .esg-item-title {
@@ -440,16 +539,16 @@
     }
 
     .esg-item-text {
-      font-size: 9pt;
+      font-size: 8.5pt;
       font-weight: 400;
-      color: #444;
-      line-height: 1.5;
+      color: #555;
+      line-height: 1.45;
     }
 
     .contact-bar {
       margin-top: auto;
-      padding-top: 12pt;
-      border-top: 1px solid rgba(67, 57, 219, 0.15);
+      padding-top: 14pt;
+      border-top: 1px solid rgba(67, 57, 219, 0.12);
       text-align: center;
     }
 
@@ -470,28 +569,60 @@
     <div class="logo-section">
       <svg width="301" height="92" viewBox="0 0 301 92" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_862_13417)">
-          <path d="M82.4748 42.4198C77.1068 39.257 64.4326 32.8619 58.8441 29.792L57.0683 28.8577V26.8149C56.987 24.2151 57.2714 1.98878 57.0045 0.0272973C70.7755 0.0272973 91.4001 0.0505102 105.02 0.0098877C98.1841 12.8582 89.2819 29.6353 82.4748 42.4198Z" fill="white" />
+          <path
+            d="M82.4748 42.4198C77.1068 39.257 64.4326 32.8619 58.8441 29.792L57.0683 28.8577V26.8149C56.987 24.2151 57.2714 1.98878 57.0045 0.0272973C70.7755 0.0272973 91.4001 0.0505102 105.02 0.0098877C98.1841 12.8582 89.2819 29.6353 82.4748 42.4198Z"
+            fill="white" />
           <path d="M51.0462 30.4148L26.0111 45.4568L0.00109863 2.16479L51.0462 30.4148Z" fill="white" />
-          <path d="M53.5816 27.8502L3.26196 0.000610352L53.7209 0.01802C53.6629 0.186313 53.628 0.366213 53.628 0.546112L53.5816 27.8444V27.8502Z" fill="white" />
+          <path
+            d="M53.5816 27.8502L3.26196 0.000610352L53.7209 0.01802C53.6629 0.186313 53.628 0.366213 53.628 0.546112L53.5816 27.8444V27.8502Z"
+            fill="white" />
           <path d="M53.8086 91.7267L27.7986 48.4347L52.8337 33.3928L53.8086 91.7267Z" fill="white" />
-          <path d="M80.4031 45.1457C80.5656 45.227 80.7397 45.285 80.9138 45.314L57.2366 89.8711L56.2733 32.3671L80.3973 45.1457H80.4031Z" fill="white" />
+          <path
+            d="M80.4031 45.1457C80.5656 45.227 80.7397 45.285 80.9138 45.314L57.2366 89.8711L56.2733 32.3671L80.3973 45.1457H80.4031Z"
+            fill="white" />
         </g>
-        <path d="M114.516 25.2714H119.836C120.245 31.0521 123.878 34.4795 129.607 34.4795C135.541 34.4795 139.02 32.0242 139.02 27.7781C139.02 22.5599 134.006 21.7926 128.686 20.9743C122.496 20.0022 115.59 18.9282 115.59 10.9475C115.59 3.88794 120.757 0 129.504 0C137.689 0 142.856 4.86006 143.419 12.9941H138.15C137.843 7.57108 134.518 4.39948 129.3 4.39948C124.082 4.39948 121.013 6.65042 121.013 10.5893C121.013 15.0403 125.616 15.7561 130.681 16.5239C137.127 17.547 144.493 18.6724 144.493 27.3175C144.493 34.5819 138.917 38.879 129.504 38.879C120.705 38.879 115.13 33.8655 114.516 25.2714Z" fill="white" />
-        <path d="M171.296 26.3458H152.164C152.368 31.7169 155.028 34.8885 159.274 34.8885C163.009 34.8885 165.618 32.8424 166.283 29.3641H171.296C170.427 35.3491 165.976 38.8789 159.274 38.8789C151.652 38.8789 147.201 33.9679 147.201 25.6295C147.201 17.2911 151.652 12.3801 159.274 12.3801C166.845 12.3801 171.296 17.2911 171.296 25.6295L171.296 26.3458ZM152.215 24.1968H166.231C165.822 19.2348 163.316 16.37 159.274 16.37C155.182 16.37 152.624 19.2348 152.215 24.1968Z" fill="white" />
-        <path d="M174.058 25.6295C174.058 17.2911 178.765 12.3801 186.694 12.3801C193.139 12.3801 197.437 15.8075 198.613 21.6906H193.549C192.526 18.4166 190.172 16.5238 186.694 16.5238C181.987 16.5238 179.276 19.8998 179.276 25.6295C179.276 31.3588 181.987 34.7352 186.694 34.7352C190.326 34.7352 192.781 32.6891 193.651 29.0569H198.767C197.692 35.2982 193.344 38.8789 186.694 38.8789C178.765 38.8789 174.058 33.9679 174.058 25.6295Z" fill="white" />
-        <path d="M219.484 12.8923H224.599V38.368H219.484V29.5181H219.382C219.382 35.4008 216.312 38.8796 211.094 38.8796C205.518 38.8796 202.244 35.0431 202.244 28.597V12.8923H207.36V28.4436C207.36 32.434 209.457 34.7359 213.038 34.7359C217.079 34.7359 219.484 31.7691 219.484 26.7557L219.484 12.8923Z" fill="white" />
-        <path d="M247.565 13.1474L246.031 17.9046C245.059 17.3421 243.677 16.9839 242.348 16.9839C237.948 16.9839 235.39 20.4113 235.39 26.2435V38.3674H230.275V12.8917H235.39V22.867H235.492C235.492 16.2681 238.511 12.3801 243.626 12.3801C245.059 12.3801 246.542 12.6868 247.565 13.1474Z" fill="white" />
-        <path d="M249.815 7.57111V1.79089H254.93V7.57111H249.815ZM249.815 38.3675V12.8917H254.93V38.3675H249.815Z" fill="white" />
-        <path d="M267.049 16.6259V30.4885C267.049 33.1995 268.686 34.7341 271.5 34.7341C272.728 34.7341 274.057 34.4272 275.08 33.9157V37.8033C273.648 38.4683 271.704 38.8776 269.863 38.8776C264.901 38.8776 261.934 35.9618 261.934 31V16.6259H257.995V12.8917H262.292V4.19568H267.407V12.8917H275.439V16.6259H267.049Z" fill="white" />
-        <path d="M295.495 12.8923H300.968L289.816 50.1338H284.342L287.872 38.368H283.626L275.953 12.8923H281.478L288.435 38.0099H288.537L295.495 12.8923Z" fill="white" />
-        <path d="M143.266 89.5207L140.299 80.0054H122.956L119.99 89.5207H114.516L127.1 51.6648H136.564L149.047 89.5207H143.266ZM124.287 75.7083H138.969L131.704 52.1763H131.602L124.287 75.7083Z" fill="white" />
+        <path
+          d="M114.516 25.2714H119.836C120.245 31.0521 123.878 34.4795 129.607 34.4795C135.541 34.4795 139.02 32.0242 139.02 27.7781C139.02 22.5599 134.006 21.7926 128.686 20.9743C122.496 20.0022 115.59 18.9282 115.59 10.9475C115.59 3.88794 120.757 0 129.504 0C137.689 0 142.856 4.86006 143.419 12.9941H138.15C137.843 7.57108 134.518 4.39948 129.3 4.39948C124.082 4.39948 121.013 6.65042 121.013 10.5893C121.013 15.0403 125.616 15.7561 130.681 16.5239C137.127 17.547 144.493 18.6724 144.493 27.3175C144.493 34.5819 138.917 38.879 129.504 38.879C120.705 38.879 115.13 33.8655 114.516 25.2714Z"
+          fill="white" />
+        <path
+          d="M171.296 26.3458H152.164C152.368 31.7169 155.028 34.8885 159.274 34.8885C163.009 34.8885 165.618 32.8424 166.283 29.3641H171.296C170.427 35.3491 165.976 38.8789 159.274 38.8789C151.652 38.8789 147.201 33.9679 147.201 25.6295C147.201 17.2911 151.652 12.3801 159.274 12.3801C166.845 12.3801 171.296 17.2911 171.296 25.6295L171.296 26.3458ZM152.215 24.1968H166.231C165.822 19.2348 163.316 16.37 159.274 16.37C155.182 16.37 152.624 19.2348 152.215 24.1968Z"
+          fill="white" />
+        <path
+          d="M174.058 25.6295C174.058 17.2911 178.765 12.3801 186.694 12.3801C193.139 12.3801 197.437 15.8075 198.613 21.6906H193.549C192.526 18.4166 190.172 16.5238 186.694 16.5238C181.987 16.5238 179.276 19.8998 179.276 25.6295C179.276 31.3588 181.987 34.7352 186.694 34.7352C190.326 34.7352 192.781 32.6891 193.651 29.0569H198.767C197.692 35.2982 193.344 38.8789 186.694 38.8789C178.765 38.8789 174.058 33.9679 174.058 25.6295Z"
+          fill="white" />
+        <path
+          d="M219.484 12.8923H224.599V38.368H219.484V29.5181H219.382C219.382 35.4008 216.312 38.8796 211.094 38.8796C205.518 38.8796 202.244 35.0431 202.244 28.597V12.8923H207.36V28.4436C207.36 32.434 209.457 34.7359 213.038 34.7359C217.079 34.7359 219.484 31.7691 219.484 26.7557L219.484 12.8923Z"
+          fill="white" />
+        <path
+          d="M247.565 13.1474L246.031 17.9046C245.059 17.3421 243.677 16.9839 242.348 16.9839C237.948 16.9839 235.39 20.4113 235.39 26.2435V38.3674H230.275V12.8917H235.39V22.867H235.492C235.492 16.2681 238.511 12.3801 243.626 12.3801C245.059 12.3801 246.542 12.6868 247.565 13.1474Z"
+          fill="white" />
+        <path d="M249.815 7.57111V1.79089H254.93V7.57111H249.815ZM249.815 38.3675V12.8917H254.93V38.3675H249.815Z"
+          fill="white" />
+        <path
+          d="M267.049 16.6259V30.4885C267.049 33.1995 268.686 34.7341 271.5 34.7341C272.728 34.7341 274.057 34.4272 275.08 33.9157V37.8033C273.648 38.4683 271.704 38.8776 269.863 38.8776C264.901 38.8776 261.934 35.9618 261.934 31V16.6259H257.995V12.8917H262.292V4.19568H267.407V12.8917H275.439V16.6259H267.049Z"
+          fill="white" />
+        <path
+          d="M295.495 12.8923H300.968L289.816 50.1338H284.342L287.872 38.368H283.626L275.953 12.8923H281.478L288.435 38.0099H288.537L295.495 12.8923Z"
+          fill="white" />
+        <path
+          d="M143.266 89.5207L140.299 80.0054H122.956L119.99 89.5207H114.516L127.1 51.6648H136.564L149.047 89.5207H143.266ZM124.287 75.7083H138.969L131.704 52.1763H131.602L124.287 75.7083Z"
+          fill="white" />
         <path d="M152.06 89.5204V50.1299H157.176V89.5204H152.06Z" fill="white" />
         <path d="M163.367 89.5204V50.1299H168.482V89.5204H163.367Z" fill="white" />
-        <path d="M174.67 58.7237V52.9435H179.786V58.7237H174.67ZM174.67 89.52V64.0443H179.786V89.52H174.67Z" fill="white" />
-        <path d="M204.492 64.0458H209.607V89.5215H204.492V81.0298H204.39C204.39 86.6567 200.962 90.0331 195.13 90.0331C188.48 90.0331 184.541 85.1221 184.541 76.7837C184.541 68.4453 188.48 63.5343 195.13 63.5343C200.962 63.5343 204.39 66.9102 204.39 72.5376H204.492V64.0458ZM204.85 76.7837C204.85 71.2587 202.088 67.678 197.33 67.678C192.573 67.678 189.81 71.0539 189.81 76.7837C189.81 82.5129 192.573 85.8893 197.33 85.8893C202.088 85.8893 204.85 82.3086 204.85 76.7837Z" fill="white" />
-        <path d="M238.714 73.8164V89.5215H233.599V73.9703C233.599 69.9799 231.399 67.678 227.664 67.678C223.47 67.678 220.963 70.6448 220.963 75.6582V89.5215H215.848V64.0458H220.963V72.8957H221.065C221.065 67.0126 224.237 63.5343 229.608 63.5343C235.338 63.5343 238.714 67.3708 238.714 73.8164Z" fill="white" />
-        <path d="M243.213 76.7837C243.213 68.4453 247.92 63.5343 255.849 63.5343C262.295 63.5343 266.592 66.9617 267.768 72.8448H262.704C261.681 69.5708 259.327 67.678 255.849 67.678C251.142 67.678 248.431 71.0539 248.431 76.7837C248.431 82.513 251.142 85.8894 255.849 85.8894C259.481 85.8894 261.937 83.8432 262.806 80.2111H267.922C266.848 86.4524 262.499 90.0331 255.849 90.0331C247.92 90.0331 243.213 85.1221 243.213 76.7837Z" fill="white" />
-        <path d="M294.828 77.5H275.695C275.9 82.8711 278.56 86.0427 282.806 86.0427C286.541 86.0427 289.15 83.9966 289.815 80.5183H294.828C293.958 86.5033 289.507 90.0331 282.806 90.0331C275.184 90.0331 270.733 85.1221 270.733 76.7837C270.733 68.4453 275.184 63.5343 282.806 63.5343C290.377 63.5343 294.828 68.4453 294.828 76.7837L294.828 77.5ZM275.746 75.351H289.763C289.354 70.389 286.847 67.5241 282.806 67.5241C278.714 67.5241 276.156 70.389 275.746 75.351Z" fill="white" />
+        <path d="M174.67 58.7237V52.9435H179.786V58.7237H174.67ZM174.67 89.52V64.0443H179.786V89.52H174.67Z"
+          fill="white" />
+        <path
+          d="M204.492 64.0458H209.607V89.5215H204.492V81.0298H204.39C204.39 86.6567 200.962 90.0331 195.13 90.0331C188.48 90.0331 184.541 85.1221 184.541 76.7837C184.541 68.4453 188.48 63.5343 195.13 63.5343C200.962 63.5343 204.39 66.9102 204.39 72.5376H204.492V64.0458ZM204.85 76.7837C204.85 71.2587 202.088 67.678 197.33 67.678C192.573 67.678 189.81 71.0539 189.81 76.7837C189.81 82.5129 192.573 85.8893 197.33 85.8893C202.088 85.8893 204.85 82.3086 204.85 76.7837Z"
+          fill="white" />
+        <path
+          d="M238.714 73.8164V89.5215H233.599V73.9703C233.599 69.9799 231.399 67.678 227.664 67.678C223.47 67.678 220.963 70.6448 220.963 75.6582V89.5215H215.848V64.0458H220.963V72.8957H221.065C221.065 67.0126 224.237 63.5343 229.608 63.5343C235.338 63.5343 238.714 67.3708 238.714 73.8164Z"
+          fill="white" />
+        <path
+          d="M243.213 76.7837C243.213 68.4453 247.92 63.5343 255.849 63.5343C262.295 63.5343 266.592 66.9617 267.768 72.8448H262.704C261.681 69.5708 259.327 67.678 255.849 67.678C251.142 67.678 248.431 71.0539 248.431 76.7837C248.431 82.513 251.142 85.8894 255.849 85.8894C259.481 85.8894 261.937 83.8432 262.806 80.2111H267.922C266.848 86.4524 262.499 90.0331 255.849 90.0331C247.92 90.0331 243.213 85.1221 243.213 76.7837Z"
+          fill="white" />
+        <path
+          d="M294.828 77.5H275.695C275.9 82.8711 278.56 86.0427 282.806 86.0427C286.541 86.0427 289.15 83.9966 289.815 80.5183H294.828C293.958 86.5033 289.507 90.0331 282.806 90.0331C275.184 90.0331 270.733 85.1221 270.733 76.7837C270.733 68.4453 275.184 63.5343 282.806 63.5343C290.377 63.5343 294.828 68.4453 294.828 76.7837L294.828 77.5ZM275.746 75.351H289.763C289.354 70.389 286.847 67.5241 282.806 67.5241C278.714 67.5241 276.156 70.389 275.746 75.351Z"
+          fill="white" />
         <defs>
           <clipPath id="clip0_862_13417">
             <rect width="105.021" height="91.7256" fill="white" transform="translate(0 0.00195312)" />
@@ -584,12 +715,14 @@
 
       <p class="p2-text">SEAL operates with ~5 full-time staff. The rest &mdash; 28 SEAL 911 responders, framework
         stewards, Intel contributors &mdash; are volunteers who donate thousands of hours of senior security expertise
-        because they believe in the mission. Initiative leads are compensated at well below market rate. Your sponsorship
+        because they believe in the mission. Initiative leads are compensated at well below market rate. Your
+        sponsorship
         funds the coordination layer that makes this volunteer network effective.</p>
 
       <div class="p2-callout">
         <strong>Where your money goes:</strong> The majority of sponsorship revenue goes directly to people &mdash; the
-        analysts, engineers, and coordinators who respond to incidents, produce threat intelligence, and develop security
+        analysts, engineers, and coordinators who respond to incidents, produce threat intelligence, and develop
+        security
         standards.
       </div>
 
@@ -602,261 +735,233 @@
 
   </div>
 
-  <!-- ═══════ PAGE 3 — Supporter + Partner ═══════ -->
-  <div class="page tier-page">
+  <!-- ═══════ PAGE 3 — Sponsorship Tiers ═══════ -->
+  <div class="page" style="display:flex;flex-direction:column;">
+    <div class="p3-heading">Sponsorship Tiers</div>
+    <div class="tiers-stack">
 
-    <!-- Supporter -->
-    <div class="td-card">
-      <div class="td-card-header">
-        <span class="td-card-name">Supporter</span>
-        <span class="td-card-price">$50,000 / year</span>
-      </div>
-      <div class="td-divider"></div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Threat Intelligence</div>
-        <ul class="td-bullets">
-          <li>Quarterly threat landscape report (5&ndash;8 pages): aggregate trends from SEAL's cross-ecosystem
-            visibility, emerging threat actor TTPs, new attack vectors, and a forward-looking watchlist</li>
-          <li>Access to sponsor mailing list for briefings and announcements</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Frameworks &amp; Certifications</div>
-        <ul class="td-bullets">
-          <li>Recognized as a sponsor on the SEAL Frameworks page</li>
-          <li>Biannual briefing on frameworks roadmap and upcoming priorities</li>
-          <li>Guidance on which SEAL-accredited vendors and certification types are most relevant to your stack</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Community</div>
-        <ul class="td-bullets">
-          <li>2 seats in SEAL's private community channels for your security/engineering team</li>
-        </ul>
+      <div class="tier-row tier-c1">
+        <div class="tier-row-header">
+          <span class="tier-row-name">Supporter</span>
+          <span class="tier-row-price">$50,000 / year</span>
+        </div>
+        <div class="tier-row-body">
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
+            </svg><span>Quarterly threat landscape report (5&ndash;8 pages) with emerging TTPs and watchlist</span>
+          </div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M2 3h12v10H2z M5 1v4 M11 1v4 M2 7h12" />
+            </svg><span>Biannual framework roadmap briefings and vendor guidance</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <circle cx="6" cy="5" r="3" />
+              <path d="M1 15c0-3 2.2-5.5 5-5.5s5 2.5 5 5.5" />
+              <circle cx="11.5" cy="6" r="2" />
+              <path d="M15 15c0-2-1.5-4-3.5-4" />
+            </svg><span>2 seats in SEAL's private community channels</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" />
+            </svg><span>Logo on SEAL website, named in annual report</span></div>
+        </div>
       </div>
 
-      <div class="td-category">
-        <div class="td-cat-title">Visibility</div>
-        <ul class="td-bullets">
-          <li>Logo on SEAL website</li>
-          <li>Named in SEAL annual report</li>
-        </ul>
+      <div class="tier-row tier-c2">
+        <div class="tier-row-header">
+          <span class="tier-row-name">Partner</span>
+          <span class="tier-row-price">$100,000 / year</span>
+        </div>
+        <div class="tier-row-body">
+          <div class="tier-row-inherits">Everything in Supporter, plus:</div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
+            </svg><span>Monthly threat briefing with ecosystem-specific appendix</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
+            </svg><span>ISAC platform (OpenCTI) read access with curated feeds</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M13.5 2H10L8 5 6 2H2.5L6.5 8l-4 6h3.5L8 11l2 3h3.5L9.5 8z" />
+            </svg><span>Dedicated SEAL 911 hotline for your security team</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <circle cx="6" cy="5" r="3" />
+              <path d="M1 15c0-3 2.2-5.5 5-5.5s5 2.5 5 5.5" />
+              <circle cx="11.5" cy="6" r="2" />
+              <path d="M15 15c0-2-1.5-4-3.5-4" />
+            </svg><span>4 community seats + sponsor roundtable</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M2 3h12v10H2z M5 1v4 M11 1v4 M2 7h12" />
+            </svg><span>Direct input on framework priorities &amp; accreditation</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" />
+            </svg><span>Upgraded logo placement + inclusion in publications</span></div>
+        </div>
       </div>
+
+      <div class="tier-row tier-c3">
+        <div class="tier-row-header">
+          <span class="tier-row-name">Strategic Partner</span>
+          <span class="tier-row-price">$250,000 / year</span>
+        </div>
+        <div class="tier-row-body">
+          <div class="tier-row-inherits">Everything in Partner, plus:</div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
+            </svg><span>~4 hrs/week dedicated analyst monitoring your ecosystem</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
+            </svg><span>Monthly tailored reports + quarterly analyst calls</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M2 3h12v10H2z M5 1v4 M11 1v4 M2 7h12" />
+            </svg><span>Input on new frameworks + early access to cert standards</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <circle cx="6" cy="5" r="3" />
+              <path d="M1 15c0-3 2.2-5.5 5-5.5s5 2.5 5 5.5" />
+              <circle cx="11.5" cy="6" r="2" />
+              <path d="M15 15c0-2-1.5-4-3.5-4" />
+            </svg><span>6 community seats</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" />
+            </svg><span>Co-branded content, speaking opps, featured case study</span></div>
+        </div>
+      </div>
+
+      <div class="tier-row tier-c4">
+        <div class="tier-row-header">
+          <span class="tier-row-name">Principal Partner</span>
+          <span class="tier-row-price">$500,000 / year</span>
+        </div>
+        <div class="tier-row-body">
+          <div class="tier-row-inherits">Everything in Strategic Partner, plus:</div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
+            </svg><span>~8&ndash;10 hrs/week dedicated analyst time</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1.5L2.5 4V8C2.5 11.3 4.8 14 8 15C11.2 14 13.5 11.3 13.5 8V4L8 1.5Z" />
+            </svg><span>Early threat warnings + post-incident analysis</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M2 3h12v10H2z M5 1v4 M11 1v4 M2 7h12" />
+            </svg><span>Strategic framework input + deep development integration</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <circle cx="6" cy="5" r="3" />
+              <path d="M1 15c0-3 2.2-5.5 5-5.5s5 2.5 5 5.5" />
+              <circle cx="11.5" cy="6" r="2" />
+              <path d="M15 15c0-2-1.5-4-3.5-4" />
+            </svg><span>10 community seats + direct SEAL leadership access</span></div>
+          <div class="tier-highlight"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#4339db"
+              stroke-width="1.6">
+              <path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" />
+            </svg><span>&ldquo;Presented by&rdquo; branding on major SEAL initiatives</span></div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Partner -->
-    <div class="td-card">
-      <div class="td-card-header">
-        <span class="td-card-name">Partner</span>
-        <span class="td-card-price">$100,000 / year</span>
-      </div>
-      <div class="td-inherits">Everything in Supporter, plus:</div>
-      <div class="td-divider"></div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Threat Intelligence</div>
-        <ul class="td-bullets">
-          <li>Monthly threat briefing: SEAL's standard landscape update plus a short appendix (1&ndash;2 pages) with
-            observations specific to your ecosystem</li>
-          <li>Read access to SEAL's ISAC platform (OpenCTI) with curated threat feeds</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Incident Response</div>
-        <ul class="td-bullets">
-          <li>Dedicated SEAL 911 hotline: a direct channel between your security team and SEAL 911 responders,
-            established before any incident occurs</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Frameworks &amp; Certifications</div>
-        <ul class="td-bullets">
-          <li>Direct input on framework priorities &mdash; what new standards should exist and what areas are underserved
-          </li>
-          <li>For security vendors: priority placement in the accreditation queue</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Community</div>
-        <ul class="td-bullets">
-          <li>4 seats in SEAL's private community channels</li>
-          <li>Invitation to sponsor roundtable where SEAL shares strategic direction and sponsors provide input on
-            priorities</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Visibility</div>
-        <ul class="td-bullets">
-          <li>Upgraded logo placement on SEAL website</li>
-          <li>Inclusion in SEAL publications and reports</li>
-        </ul>
-      </div>
-    </div>
-
   </div>
 
-  <!-- ═══════ PAGE 4 — Strategic Partner + Principal Partner ═══════ -->
-  <div class="page tier-page">
+  <!-- ═══════ PAGE 4 — Strategic Initiative + What Every Sponsor Gets ═══════ -->
+  <div class="page p4-layout">
 
-    <!-- Strategic Partner -->
-    <div class="td-card">
-      <div class="td-card-header">
-        <span class="td-card-name">Strategic Partner</span>
-        <span class="td-card-price">$250,000 / year</span>
+    <div class="si-card">
+      <div class="si-header">
+        <span class="si-name">Strategic Initiative Sponsor</span>
+        <span class="si-price">by arrangement</span>
       </div>
-      <div class="td-inherits">Everything in Partner, plus:</div>
-      <div class="td-divider"></div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Threat Intelligence</div>
-        <ul class="td-bullets">
-          <li>Approximately 4 hours/week of dedicated analyst time monitoring threats specific to your ecosystem</li>
-          <li>Monthly written summary (2&ndash;4 pages) tailored to your chain or sector, plus ad-hoc alerts for
-            critical findings</li>
-          <li>Quarterly call (30&ndash;60 min) with your analyst to discuss findings and adjust monitoring priorities
-          </li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Frameworks &amp; Certifications</div>
-        <ul class="td-bullets">
-          <li>Input on the direction of new frameworks and whether new certification categories should be developed</li>
-          <li>For security vendors: early access to new certification standards before public release</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Community</div>
-        <ul class="td-bullets">
-          <li>6 seats in SEAL's private community channels</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Visibility</div>
-        <ul class="td-bullets">
-          <li>Co-branded content opportunities</li>
-          <li>Speaking opportunities at SEAL events</li>
-          <li>Featured case study</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Principal Partner -->
-    <div class="td-card">
-      <div class="td-card-header">
-        <span class="td-card-name">Principal Partner</span>
-        <span class="td-card-price">$500,000 / year</span>
-      </div>
-      <div class="td-inherits">Everything in Strategic Partner, plus:</div>
-      <div class="td-divider"></div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Threat Intelligence</div>
-        <ul class="td-bullets">
-          <li>Approximately 8&ndash;10 hours/week of dedicated analyst time</li>
-          <li>Deeper and more frequent written analysis, monthly analyst call</li>
-          <li>Early warning when SEAL Intel identifies threats targeting your ecosystem</li>
-          <li>Post-incident analysis and lessons learned (sanitized) for incidents relevant to your ecosystem</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Frameworks &amp; Certifications</div>
-        <ul class="td-bullets">
-          <li>Strategic input into program direction for frameworks and certification standards</li>
-          <li>Deep integration of your team into the framework development process</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Community</div>
-        <ul class="td-bullets">
-          <li>10 seats in SEAL's private community channels</li>
-          <li>Direct relationship with SEAL leadership</li>
-          <li>Input into SEAL's strategic priorities</li>
-        </ul>
-      </div>
-
-      <div class="td-category">
-        <div class="td-cat-title">Visibility</div>
-        <ul class="td-bullets">
-          <li>&ldquo;Presented by&rdquo; level branding on major SEAL initiatives and publications</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ═══════ PAGE 5 — Strategic Initiative + What Every Sponsor Gets ═══════ -->
-  <div class="page tier-page">
-
-    <!-- Strategic Initiative Sponsor -->
-    <div class="td-card" style="flex:0 0 auto;">
-      <div class="td-card-header">
-        <span class="td-card-name">Strategic Initiative Sponsor</span>
-        <span class="td-card-price">by arrangement</span>
-      </div>
-      <div class="td-divider"></div>
-
-      <p class="td-card-description">For foundations and organizations that want to fund a specific capability within
-        SEAL. Every engagement at this level is bespoke and scoped collaboratively.</p>
-
-      <div class="td-examples-label">Examples of past and potential initiatives:</div>
-      <ul class="td-bullets">
-        <li>Funding a dedicated security engineer focused on a specific chain's threat landscape</li>
-        <li>Underwriting expansion of SEAL Intel's infrastructure and tooling</li>
-        <li>Sponsoring a research initiative on an emerging threat category</li>
-        <li>Funding development of new detection and monitoring systems</li>
+      <p class="si-desc">For foundations and organizations that want to fund a specific capability within SEAL. Every
+        engagement is bespoke and scoped collaboratively.</p>
+      <ul class="si-examples">
+        <li>Dedicated security engineer for a specific chain's threat landscape</li>
+        <li>Expansion of SEAL Intel infrastructure and tooling</li>
+        <li>Research initiative on an emerging threat category</li>
+        <li>Development of new detection and monitoring systems</li>
       </ul>
-
-      <p class="td-card-description" style="margin-top:10pt;">Deliverables and milestones defined per engagement. Reach
-        out to discuss.</p>
+      <p class="si-cta">Deliverables and milestones defined per engagement. Reach out to discuss.</p>
     </div>
 
-    <!-- What Every Sponsor Gets -->
     <div class="esg-card">
       <div class="esg-heading">What Every Sponsor Gets</div>
       <p class="esg-intro">Regardless of tier, every SEAL sponsor benefits from:</p>
-
-      <div class="esg-item">
-        <div class="esg-item-title">SEAL's public goods</div>
-        <div class="esg-item-text">SEAL 911 emergency response, published frameworks, open-source tooling, and public
-          threat research continue to protect the entire ecosystem, including yours.</div>
+      <div class="esg-grid">
+        <div class="esg-item">
+          <div class="esg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4339db" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg></div>
+          <div>
+            <div class="esg-item-title">SEAL's public goods</div>
+            <div class="esg-item-text">SEAL 911 emergency response, published frameworks, open-source tooling, and
+              public threat research protect the entire ecosystem, including yours.</div>
+          </div>
+        </div>
+        <div class="esg-item">
+          <div class="esg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4339db" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="16" rx="2" />
+              <path d="M3 10h18" />
+              <path d="M10 4v16" />
+            </svg></div>
+          <div>
+            <div class="esg-item-title">Financial transparency</div>
+            <div class="esg-item-text">Annual transparency reports and quarterly financial updates so you can see
+              exactly how sponsorship is put to work.</div>
+          </div>
+        </div>
+        <div class="esg-item">
+          <div class="esg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4339db" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18" />
+              <path d="M9 3v6" />
+            </svg></div>
+          <div>
+            <div class="esg-item-title">Quarterly organizational update</div>
+            <div class="esg-item-text">Newsletter covering incidents handled, framework adoption, team news, and how
+              sponsorship revenue was allocated.</div>
+          </div>
+        </div>
+        <div class="esg-item">
+          <div class="esg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4339db" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg></div>
+          <div>
+            <div class="esg-item-title">Structured onboarding</div>
+            <div class="esg-item-text">Within the first two weeks, we walk through deliverables, understand your threat
+              profile, and set expectations.</div>
+          </div>
+        </div>
+        <div class="esg-item full-width">
+          <div class="esg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4339db" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
+            </svg></div>
+          <div>
+            <div class="esg-item-title">Quarterly check-ins (Partner tier and above)</div>
+            <div class="esg-item-text">A brief conversation to make sure deliverables are working for your team and to
+              adjust as needed.</div>
+          </div>
+        </div>
       </div>
-
-      <div class="esg-item">
-        <div class="esg-item-title">Quarterly organizational update</div>
-        <div class="esg-item-text">A public newsletter covering incidents handled, framework adoption, team news, and
-          full financial transparency (balance sheet, runway, how sponsorship revenue was allocated).</div>
-      </div>
-
-      <div class="esg-item">
-        <div class="esg-item-title">Structured onboarding</div>
-        <div class="esg-item-text">Within the first two weeks, we'll walk through exactly what you'll receive,
-          understand your threat profile, and set expectations together.</div>
-      </div>
-
-      <div class="esg-item">
-        <div class="esg-item-title">Quarterly check-ins (Partner tier and above)</div>
-        <div class="esg-item-text">A brief conversation to make sure deliverables are working for your team and to
-          adjust as needed.</div>
-      </div>
-
-      <div class="esg-item">
-        <div class="esg-item-title">Financial transparency</div>
-        <div class="esg-item-text">SEAL publishes annual transparency reports and quarterly financial updates so you can
-          see exactly how your sponsorship is put to work.</div>
-      </div>
-
       <div class="contact-bar">
         <p>For questions or to discuss sponsorship, contact [TBD].</p>
       </div>
