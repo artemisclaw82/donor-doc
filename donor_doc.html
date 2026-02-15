@@ -330,18 +330,12 @@
     .page-3 {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
     }
 
+    /* ── Page 3: Vertical stack layout ── */
     .p3-header {
-      height: 13%;
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8pt;
+      padding: 20pt 44pt 14pt;
       flex-shrink: 0;
     }
 
@@ -350,113 +344,118 @@
       font-weight: 600;
       letter-spacing: 0.3pt;
       color: var(--white);
-      text-align: center;
     }
 
     .p3-subtitle {
-      font-size: 10pt;
+      font-size: 9.5pt;
       font-weight: 400;
       color: var(--white);
       opacity: 0.7;
-      text-align: center;
-      letter-spacing: 0.2pt;
+      margin-top: 4pt;
     }
 
-    .tiers-grid {
-      height: 74%;
+    .tiers-stack {
+      flex: 1;
       width: 100%;
       background: var(--white);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 10pt;
-      padding: 12pt 16pt;
-      flex-shrink: 0;
-    }
-
-    .tier-cell {
+      padding: 14pt 20pt;
       display: flex;
       flex-direction: column;
+      gap: 8pt;
+    }
+
+    .tier-row {
+      display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding: 16pt 14pt 12pt;
+      gap: 14pt;
+      padding: 12pt 16pt;
       border: 1px solid rgba(67, 57, 219, 0.10);
       border-radius: 8pt;
-      box-shadow: 0 2pt 8pt rgba(67, 57, 219, 0.06);
-      text-align: center;
-      gap: 6pt;
+      box-shadow: 0 1pt 6pt rgba(67, 57, 219, 0.06);
+      flex: 1;
       position: relative;
     }
 
-    .tier-cell.tier-recommended {
-      background: rgba(67, 57, 219, 0.03);
+    .tier-row.tier-recommended {
+      background: rgba(67, 57, 219, 0.04);
       border-color: var(--seal);
       border-width: 1.5pt;
-      box-shadow: 0 3pt 12pt rgba(67, 57, 219, 0.14);
+      box-shadow: 0 2pt 10pt rgba(67, 57, 219, 0.12);
     }
 
     .tier-popular-badge {
       position: absolute;
       top: -1pt;
-      left: 50%;
-      transform: translateX(-50%);
+      right: 16pt;
       background: var(--seal);
       color: var(--white);
-      font-size: 6pt;
+      font-size: 7pt;
       font-weight: 600;
-      letter-spacing: 0.8pt;
+      letter-spacing: 0.6pt;
       padding: 3pt 10pt;
-      border-radius: 0 0 4pt 4pt;
+      border-radius: 0 0 5pt 5pt;
       text-transform: uppercase;
     }
 
+    .tier-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 110pt;
+      flex-shrink: 0;
+      gap: 4pt;
+    }
+
     .tier-badge {
-      height: 50pt;
-      width: 50pt;
+      height: 44pt;
+      width: 44pt;
       object-fit: contain;
     }
 
     .tier-name {
-      font-size: 16pt;
-      font-weight: 600;
-      color: var(--seal);
-      letter-spacing: 0.3pt;
-    }
-
-    .tier-price {
-      font-size: 14pt;
+      font-size: 13pt;
       font-weight: 600;
       color: var(--seal);
       letter-spacing: 0.2pt;
+      text-align: center;
+    }
+
+    .tier-price {
+      font-size: 13pt;
+      font-weight: 600;
+      color: var(--seal);
     }
 
     .tier-price-period {
-      font-size: 9pt;
+      font-size: 8.5pt;
       font-weight: 400;
       color: #888;
     }
 
-    .tier-divider {
-      width: 30pt;
-      height: 1pt;
-      background: rgba(67, 57, 219, 0.15);
-      margin: 2pt 0;
+    .tier-sep {
+      width: 1pt;
+      align-self: stretch;
+      background: rgba(67, 57, 219, 0.12);
+      flex-shrink: 0;
+    }
+
+    .tier-right {
+      flex: 1;
+      min-width: 0;
     }
 
     .tier-highlights {
       list-style: none;
-      text-align: left;
-      width: 100%;
-      padding: 0 6pt;
-      margin-top: auto;
+      padding: 0;
+      margin: 0;
     }
 
     .tier-highlights li {
-      font-size: 8.5pt;
+      font-size: 10.5pt;
       font-weight: 400;
-      color: #444;
+      color: #333;
       line-height: 1.6;
-      padding-left: 10pt;
+      padding-left: 13pt;
       position: relative;
     }
 
@@ -465,20 +464,18 @@
       position: absolute;
       left: 0;
       color: var(--seal);
-      font-size: 8pt;
+      font-size: 9.5pt;
       font-weight: 600;
     }
 
     .p3-footer {
-      height: 13%;
       width: 100%;
+      padding: 14pt 44pt 18pt;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 10pt;
+      gap: 8pt;
       flex-shrink: 0;
-      padding: 0 44pt;
     }
 
     .p3-footer-text {
@@ -497,7 +494,7 @@
       text-align: center;
       letter-spacing: 0.3pt;
       background: rgba(254, 254, 254, 0.15);
-      padding: 8pt 24pt;
+      padding: 7pt 24pt;
       border-radius: 6pt;
       border: 1.5px solid rgba(254, 254, 254, 0.3);
     }
@@ -679,59 +676,80 @@
 
     <div class="p3-header">
       <div class="p3-title">Sponsorship Tiers</div>
-      <div class="p3-subtitle">Each tier includes everything from the tier below it</div>
+      <div class="p3-subtitle">Cumulative tiers — each includes all benefits from the previous.</div>
     </div>
 
-    <div class="tiers-grid">
-      <div class="tier-cell">
-        <img class="tier-badge" src="logos/sentinel.png" alt="Supporter badge" />
-        <div class="tier-name">Supporter</div>
-        <div class="tier-price">$50,000 <span class="tier-price-period">/ year</span></div>
-        <div class="tier-divider"></div>
-        <ul class="tier-highlights">
-          <li>Quarterly threat landscape report</li>
-          <li>Framework roadmap briefings</li>
-          <li>2 community seats</li>
-          <li>Logo on SEAL website</li>
-        </ul>
+    <div class="tiers-stack">
+
+      <div class="tier-row">
+        <div class="tier-left">
+          <img class="tier-badge" src="logos/sentinel.png" alt="Supporter badge" />
+          <div class="tier-name">Supporter</div>
+          <div class="tier-price">$50,000 <span class="tier-price-period">/ year</span></div>
+        </div>
+        <div class="tier-sep"></div>
+        <div class="tier-right">
+          <ul class="tier-highlights">
+            <li>Quarterly threat landscape report</li>
+            <li>Framework roadmap briefings</li>
+            <li>2 community seats</li>
+            <li>Logo on SEAL website</li>
+          </ul>
+        </div>
       </div>
-      <div class="tier-cell tier-recommended">
+
+      <div class="tier-row tier-recommended">
         <div class="tier-popular-badge">Recommended</div>
-        <img class="tier-badge" src="logos/sentinel.png" alt="Partner badge" />
-        <div class="tier-name">Partner</div>
-        <div class="tier-price">$100,000 <span class="tier-price-period">/ year</span></div>
-        <div class="tier-divider"></div>
-        <ul class="tier-highlights">
-          <li>Monthly threat briefings + ISAC access</li>
-          <li>Dedicated SEAL 911 hotline</li>
-          <li>4 community seats + roundtable</li>
-          <li>Framework input + accreditation</li>
-        </ul>
+        <div class="tier-left">
+          <img class="tier-badge" src="logos/sentinel.png" alt="Partner badge" />
+          <div class="tier-name">Partner</div>
+          <div class="tier-price">$100,000 <span class="tier-price-period">/ year</span></div>
+        </div>
+        <div class="tier-sep"></div>
+        <div class="tier-right">
+          <ul class="tier-highlights">
+            <li>Monthly threat briefings + ISAC access</li>
+            <li>Dedicated SEAL 911 hotline</li>
+            <li>4 community seats + roundtable</li>
+            <li>Framework input + accreditation</li>
+          </ul>
+        </div>
       </div>
-      <div class="tier-cell">
-        <img class="tier-badge" src="logos/vanguard.png" alt="Strategic Partner badge" />
-        <div class="tier-name">Strategic Partner</div>
-        <div class="tier-price">$250,000 <span class="tier-price-period">/ year</span></div>
-        <div class="tier-divider"></div>
-        <ul class="tier-highlights">
-          <li>~4 hrs/week dedicated analyst</li>
-          <li>Tailored monthly reports</li>
-          <li>6 community seats</li>
-          <li>Co-branded content + events</li>
-        </ul>
+
+      <div class="tier-row">
+        <div class="tier-left">
+          <img class="tier-badge" src="logos/vanguard.png" alt="Strategic Partner badge" />
+          <div class="tier-name">Strategic Partner</div>
+          <div class="tier-price">$250,000 <span class="tier-price-period">/ year</span></div>
+        </div>
+        <div class="tier-sep"></div>
+        <div class="tier-right">
+          <ul class="tier-highlights">
+            <li>~4 hrs/week dedicated analyst</li>
+            <li>Tailored monthly reports</li>
+            <li>6 community seats</li>
+            <li>Co-branded content + events</li>
+          </ul>
+        </div>
       </div>
-      <div class="tier-cell">
-        <img class="tier-badge" src="logos/paladin.png" alt="Principal Partner badge" />
-        <div class="tier-name">Principal Partner</div>
-        <div class="tier-price">$500,000 <span class="tier-price-period">/ year</span></div>
-        <div class="tier-divider"></div>
-        <ul class="tier-highlights">
-          <li>~8&ndash;10 hrs/week dedicated analyst</li>
-          <li>Early threat warnings</li>
-          <li>10 seats + leadership access</li>
-          <li>&ldquo;Presented by&rdquo; branding</li>
-        </ul>
+
+      <div class="tier-row">
+        <div class="tier-left">
+          <img class="tier-badge" src="logos/paladin.png" alt="Principal Partner badge" />
+          <div class="tier-name">Principal Partner</div>
+          <div class="tier-price">$500,000 <span class="tier-price-period">/ year</span></div>
+        </div>
+        <div class="tier-sep"></div>
+        <div class="tier-right">
+          <ul class="tier-highlights">
+            <li>~8&ndash;10 hrs/week dedicated analyst</li>
+            <li>Early threat warnings</li>
+            <li>10 seats + leadership access</li>
+            <li>&ldquo;Presented by&rdquo; branding</li>
+          </ul>
+        </div>
       </div>
+
     </div>
 
     <div class="p3-footer">
