@@ -108,8 +108,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 20pt;
+      gap: 16pt;
       flex-shrink: 0;
+    }
+
+    .mission-subtitle {
+      font-size: 11pt;
+      font-weight: 300;
+      letter-spacing: 1.5pt;
+      color: rgba(254, 254, 254, 0.6);
+      text-transform: uppercase;
+      text-align: center;
     }
 
     .mission-heading {
@@ -137,6 +146,8 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+      gap: 9pt;
+      padding: 9pt;
       flex-shrink: 0;
     }
 
@@ -145,8 +156,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20pt;
-      border: 1px solid var(--seal);
+      padding: 16pt;
+      border: 1px solid rgba(67, 57, 219, 0.12);
+      border-radius: 6pt;
+      box-shadow: 0 1pt 4pt rgba(67, 57, 219, 0.08);
       text-align: center;
       gap: 16pt;
     }
@@ -165,7 +178,7 @@
     }
 
     .initiative-description {
-      font-size: 12pt;
+      font-size: 12.5pt;
       font-weight: 300;
       color: var(--seal);
       line-height: 1.4;
@@ -184,6 +197,18 @@
       height: 130pt;
       overflow: hidden;
       flex-shrink: 0;
+      position: relative;
+    }
+
+    .p2-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50pt;
+      background: linear-gradient(to bottom, rgba(67, 57, 219, 0) 0%, var(--seal) 100%);
+      pointer-events: none;
     }
 
     .p2-hero img {
@@ -259,7 +284,7 @@
     .stat-box {
       background: var(--seal);
       border-radius: 8pt;
-      padding: 16pt 10pt;
+      padding: 18pt 12pt;
       text-align: center;
     }
 
@@ -271,7 +296,7 @@
     }
 
     .stat-label {
-      font-size: 7.5pt;
+      font-size: 8pt;
       font-weight: 400;
       color: rgba(254, 254, 254, 0.75);
       margin-top: 6pt;
@@ -285,8 +310,8 @@
       line-height: 1.6;
       padding: 12pt 16pt;
       border-left: 3pt solid var(--seal);
-      background: rgba(67, 57, 219, 0.04);
-      border-radius: 0 6pt 6pt 0;
+      background: rgba(67, 57, 219, 0.06);
+      border-radius: 6pt;
       margin-bottom: 12pt;
     }
 
@@ -339,6 +364,8 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+      gap: 9pt;
+      padding: 9pt;
       flex-shrink: 0;
     }
 
@@ -347,10 +374,33 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 16pt 18pt;
-      border: 1px solid var(--seal);
+      padding: 14pt 16pt;
+      border: 1px solid rgba(67, 57, 219, 0.12);
+      border-radius: 6pt;
+      box-shadow: 0 1pt 4pt rgba(67, 57, 219, 0.08);
       text-align: center;
       gap: 8pt;
+      position: relative;
+    }
+
+    .tier-cell.tier-recommended {
+      background: rgba(67, 57, 219, 0.04);
+      border-color: rgba(67, 57, 219, 0.25);
+      box-shadow: 0 2pt 8pt rgba(67, 57, 219, 0.12);
+    }
+
+    .tier-popular-badge {
+      position: absolute;
+      top: 8pt;
+      right: 8pt;
+      background: var(--seal);
+      color: var(--white);
+      font-size: 6.5pt;
+      font-weight: 500;
+      letter-spacing: 0.3pt;
+      padding: 2.5pt 6pt;
+      border-radius: 3pt;
+      text-transform: uppercase;
     }
 
     .tier-badge {
@@ -367,9 +417,9 @@
     }
 
     .tier-price {
-      font-size: 11pt;
-      font-weight: 400;
-      color: var(--seal-light);
+      font-size: 12pt;
+      font-weight: 600;
+      color: var(--seal);
       margin-top: -4pt;
     }
 
@@ -383,7 +433,9 @@
 
     .tier-highlights {
       list-style: none;
-      text-align: center;
+      text-align: left;
+      width: 100%;
+      padding: 0 4pt;
     }
 
     .tier-highlights li {
@@ -391,6 +443,12 @@
       font-weight: 400;
       color: var(--seal);
       line-height: 1.5;
+    }
+
+    .tier-highlights li::before {
+      content: '\2022';
+      margin-right: 5pt;
+      color: var(--seal-light);
     }
 
     .p3-footer {
@@ -415,11 +473,15 @@
     }
 
     .p3-footer-contact {
-      font-size: 11pt;
+      font-size: 12pt;
       font-weight: 500;
       color: var(--white);
       text-align: center;
       letter-spacing: 0.3pt;
+      background: rgba(254, 254, 254, 0.12);
+      padding: 8pt 20pt;
+      border-radius: 6pt;
+      border: 1px solid rgba(254, 254, 254, 0.2);
     }
   </style>
 </head>
@@ -496,6 +558,7 @@
 
     <div class="mission-section">
       <div class="mission-heading">Our primary purpose is to secure the future of crypto</div>
+      <div class="mission-subtitle">Sponsorship Program 2025</div>
       <div class="mission-paragraph">We work with top security researchers, developers, and founders to build and
         maintain public goods that benefit everyone. Everyday, we fight for the wellbeing of the ecosystem, not for
         profit but for the ideals that decentralized technology represents.</div>
@@ -613,7 +676,8 @@
           <li>Logo on SEAL website</li>
         </ul>
       </div>
-      <div class="tier-cell">
+      <div class="tier-cell tier-recommended">
+        <div class="tier-popular-badge">Most Popular</div>
         <img class="tier-badge" src="logos/sentinel.png" alt="Partner badge" />
         <div class="tier-name">Partner</div>
         <div class="tier-price">$100,000 / year</div>
